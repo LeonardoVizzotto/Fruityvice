@@ -4,12 +4,14 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.text};
   font-weight: 600;
+  height: 8vh;
+  position: sticky;
 `;
 
 export const Spacer = styled.div`
