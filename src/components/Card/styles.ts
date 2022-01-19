@@ -15,4 +15,7 @@ export const ImagePlaceHolder = styled.div`
   margin: 1px;
 `;
 
-export const Details = styled.div``;
+export const Spacer = styled.div`
+  display: block;
+  height: 1em;
+`;

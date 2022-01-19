@@ -7,5 +7,7 @@ export const HomeContainer = styled.div`
 `;
 
 export const Main = styled.main`
+  margin: 1em 0;
+  padding: 0 ${props => props.theme.sizes.horizontalPadding};
   flex: 1 0 auto;
 `;

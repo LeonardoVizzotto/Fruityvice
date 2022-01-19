@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.button<{ filled: boolean }>`
+export default styled.button<{ filled?: boolean }>`
   width: 100%;
   border-radius: 30px;
   background-color: ${props =>

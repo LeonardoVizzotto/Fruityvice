@@ -5,6 +5,9 @@ const theme = {
     primary: '#FEB3A1',
     grey: '#BBBBBB',
   },
+  sizes: {
+    horizontalPadding: '3em',
+  },
 };
 
 export default theme;

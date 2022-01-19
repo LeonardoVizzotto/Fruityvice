@@ -6,7 +6,7 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   text-align: center;
-  height: 10vh;
+  padding: 0 ${props => props.theme.sizes.horizontalPadding};
 
   > * {
     margin: 10px;

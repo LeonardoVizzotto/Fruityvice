@@ -6,5 +6,5 @@ export default styled.div`
   grid-gap: 40px;
   width: 100%;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 1em 0;
 `;
