@@ -5,6 +5,9 @@ import Footer from '../components/footer';
 import Toolbar from '../components/toolbar';
 import { HomeContainer, Main } from '../styles/pages/Home';
 import CardGrid from '../components/CardGrid';
+import usePagination from '../hooks/usePagination';
+import PaginationControls from '../components/PaginationControls';
+import { useEffect, useState } from 'react';
 
 export interface Fruit {
   family: string;
@@ -19,6 +22,7 @@ export interface Fruit {
     sugar: number;
   };
   order: string;
+  selected: boolean;
 }
 
 interface HomeProps {
@@ -26,6 +30,23 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = props => {
+  const [fruitList, setFruitList] = useState(props.data);
+
+  const { currentPage, getCurrentData, setCurrentPage, pageCount } =
+    usePagination<Fruit>(fruitList, 8);
+
+  useEffect(() => {
+    setFruitList(props.data);
+  }, [props]);
+
+  const toggleFruitSelection = (fruitId: number) => {
+    setFruitList(
+      fruitList.map(f =>
+        f.id === fruitId ? { ...f, selected: !f.selected } : f
+      )
+    );
+  };
+
   return (
     <HomeContainer>
       <Head>
@@ -35,15 +56,24 @@ const Home: NextPage<HomeProps> = props => {
       </Head>
       <Toolbar />
       <Main>
-        <h1>Let’s make a fruit salad!</h1>
+        <h1>Let's make a fruit salad!</h1>
         <span>
           Pick a minimum of 3 fruits and make a delicious fruit salad!
         </span>
         <CardGrid>
-          {props.data.map(fruit => (
-            <Card key={fruit.id} {...fruit} />
+          {getCurrentData().map(fruit => (
+            <Card
+              key={fruit.id}
+              fruit={fruit}
+              toggleCard={toggleFruitSelection}
+            />
           ))}
         </CardGrid>
+        <PaginationControls
+          pageCount={pageCount}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </Main>
       <Footer></Footer>
     </HomeContainer>
