@@ -50,13 +50,11 @@ const Home: NextPage<HomeProps> = props => {
 
   const generateRandomSelection = () => {
     let total = Math.floor(Math.random() * (5 - 3) + 3);
-    console.log(total);
     const selectedIndexes: number[] = [];
     while (total > 0) {
       total--;
       selectedIndexes.push(Math.floor(Math.random() * fruitList.length));
     }
-    console.log(selectedIndexes);
 
     setFruitList(
       fruitList.map((fruit, i) =>
@@ -81,7 +79,7 @@ const Home: NextPage<HomeProps> = props => {
           Pick a minimum of 3 fruits and make a delicious fruit salad!
         </span>
         <Button onClick={generateRandomSelection}>Random generator</Button>
-        <CardGrid>
+        <CardGrid data-test-id="card-grid-test-id">
           {getCurrentData().map(fruit => (
             <Card
               key={fruit.id}

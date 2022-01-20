@@ -38,5 +38,8 @@ export const Basket = styled.div`
   > button {
     all: unset;
     cursor: pointer;
+    &:focus {
+      border: 1px solid ${props => props.theme.colors.text};
+    }
   }
 `;

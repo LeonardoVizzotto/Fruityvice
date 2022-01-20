@@ -13,11 +13,11 @@ const Card = (props: CardProps) => {
 
   return (
     <Container>
-      <ImagePlaceHolder />
-      <Spacer />
+      <ImagePlaceHolder aria-hidden="true" />
+      <Spacer aria-hidden="true" />
       <span>{fruit.name}</span>
       <span>{fruit.family}</span>
-      <Spacer />
+      <Spacer aria-hidden="true" />
       <div>
         {fruit.nutritions.calories} calories <br />{' '}
         {fruit.nutritions.carbohydrates} carbohydrates <br />
@@ -25,7 +25,7 @@ const Card = (props: CardProps) => {
         {fruit.nutritions.fat} fat <br />
         {fruit.nutritions.sugar} sugar
       </div>
-      <Spacer />
+      <Spacer aria-hidden="true" />
       <Button filled={fruit.selected} onClick={() => toggleCard(fruit.id)}>
         {fruit.selected ? 'ADDED' : 'ADD ME!'}
       </Button>

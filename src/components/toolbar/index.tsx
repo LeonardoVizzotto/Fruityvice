@@ -20,15 +20,17 @@ const Toolbar = (props: { fruits: Fruit[] }) => {
   };
 
   return (
-    <Container>
+    <Container data-test-id="toolbar-test-id">
       <h2>Fruit Salad</h2>
-      <Spacer></Spacer>
-      <Basket>
+      <Spacer aria-hidden="true"></Spacer>
+      <Basket data-test-id="basket-test-id">
         <button
+          aria-label="your-basket"
+          tabIndex={0}
           onBlur={() => setShowBasketDetail(false)}
           onClick={() => setShowBasketDetail(!showBasketDetail)}
         >
-          <BasketIcon />
+          <BasketIcon aria-hidden="true" />
           {renderItemCount()}
           {renderBasketDetail()}
         </button>

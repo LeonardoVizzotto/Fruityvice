@@ -34,4 +34,8 @@ export const Stepper = styled.button<{ circle?: boolean; selected?: boolean }>`
     opacity: 0.2;
     cursor: unset;
   }
+
+  &:focus {
+    border: 1px solid ${props => props.theme.colors.primary};
+  }
 `;
