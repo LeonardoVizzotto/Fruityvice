@@ -4,6 +4,8 @@ This project was generated with [`create-next-app`](https://github.com/vercel/ne
 
 ## Demo
 
+https://user-images.githubusercontent.com/19351745/150418789-7cab3774-6dd4-4f30-8913-f407250b5180.mov
+
 
 ## Instaling
 
